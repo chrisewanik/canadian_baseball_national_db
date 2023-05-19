@@ -7,6 +7,8 @@
 4. Kernel Ridge Regression was able to acheive an RMSE of 0.067 and a R^2 of 0.85 on two different datasets while simple linear regression achieved an R^2 of 0.85 with an RMSE of 0.070
 5. Reach out to get involved!
 
+![Linear 1](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/189754ee-b028-40bb-acc8-451c5cb4d0c6)
+
 ## Introduction
 The Canadian College Baseball Conference is one of three independent collegiate baseball conferences. Starting in 2002, the conference has been a player and community-funded athletic endeavour that has offered the only opportunity for collegiate baseball players in Canada. While not primarily known outside of British Columbia and Alberta (the two provinces that host teams), the conference has hosted many of the top Canadian Baseball players to come out of Canada. While many talented athletes have played in this conference, the goal for many athletes is to move on to an American conference (NCAA or NAIA). Alongside the culture and level of competition, players playing baseball in the US are more likely to sign professional contracts into Major League Baseball (MLB). A considerable barrier to entry is the visibility of players in Canada. Before the internet, travelling to Canada to scout any of these players was economically unfeasible. Therefore, many Canadians wound up stuck in the country. Opportunities have been improving exponentially since the internet. As digital scouting has changed the high school recruiting landscape, more Canadians are getting opportunities in the NCAA. However, these opportunities are still generally only accessible to high school athletes at the top-tier academies. Trevor Brigden is a top prospect of MLB’s best team, the Tampa Bay Rays. Brigden was drafted in the 17th round by Okanagan College (BC) after videos of him playing went viral on Twitter. Better visibility into the statistics would help grow the game in the country and improve the player’s odds of getting drafted by MLB teams. Currently, some of the data is available on a site called pointstreak. The site hosts many junior, high school and college sports statistics. Teams all input stats live during games, typically done by a parent, player, or administrator (if in a more notable conference). The data is only available in team formats and lacks player info, key statistics, rosters, data export, or creative design. There are many missing statistics, and it lacks much flexibility in viewing the data. We aimed to build a preliminary pipeline and machine learning project to predict team winning percentage. Winning percentage is the number of wins a team wins the regular season divided by their total games played. In addition to traditional statistics like runs scored and hits, this paper will build other statistical measures of team performance. In the big picture, this is a proof of concept, and we hope to scale the data scraping and develop a front-end web application that houses these statistics for anyone to view.
 
@@ -48,4 +50,43 @@ As mentioned, the modelling goal of this work was to predict team winning percen
 
 Considering that our target variable is the winning percentage, we use Root Mean Squared Error (RMSE) and R-Squared (R2) to evaluate the performance of our models. RMSE can be viewed as the average difference from the actual winning percentage, while R2 represents the amount of the variance explained. So observing the first row for the Kernel Ridge Regression on the Run Differential dataset, our model is off by an average of 0.067 of winning percentage while explaining 85% of the variance. Overall the models achieved a maximum test R2 of 0.85 and a minimum RMSE of 0.067. The best machine learning algorithm is the Kernel Ridge Regression which has two models tied for the best performance. The only model that performed poorly was the KRR on the reduced dimensions dataset. The simple linear regression, as depicted in 4, performed well, tying the leaders for R2 but slightly lagging behind on RMSE.
 
+![Model Results](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/0f5b5c67-530c-46f9-9720-6ce8873e28b3)
+
+![Linear 2](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/189754ee-b028-40bb-acc8-451c5cb4d0c6)
+
+## Conclusion and Future Work
+
+Overall this project turned out incredibly well. Web scraping was proved feasible and executed quickly. A solid foundation was designed for the PostgreSQL database, and after some tricky data decomposition, many tables could be placed in normalized form. Next, the study accurately models winning percentage and proves that the relationship between run differential and wins is relatively similar to Major League Baseball. The high R2 values received during the modelling phase indicate that despite the lower level of
+competition and smaller game schedule, certain relationships that exist in Major League Baseball
+appear to exist in Canadian College Baseball. The substantial value of run differential also suggests
+that this could be a reliable metric for seeding teams in a Canadian University World Series. These
+findings also build upon the questions posed in [2] using RPI for a ranking system. The criteria used
+in their paper would exclude the Prarie Baseball Academy from Canadian Collegiate World Series.
+However, by run differential, the 2016 and 2017 teams rank 4th and 1st in the CCBC pointsreak
+era. This suggests that using other metrics (like Pythagorean expected winning percentage) could
+be reliable measures for measuring excellence when interconference play is not feasible. It would be
+interesting to rank teams on other means, like true outcomes (HR, BB, Strikeouts). Homeruns, in
+particular, are probably a great measure of offensive ability, as they should be somewhat independent
+of competition (although that is not proven).
+There is much work to be done in the future. First, the data scrape function could be cleaned up
+by adding an argument allowing users to specify the HTML element they want on a page. This would
+allow for quicker web scraping and would generalize better to other tables. Scarpes should be extended
+to pull any other conference’s data that is made publicly available. There is still a lot of baseball data,
+rosters are available on websites, and other playing statistics remain available. Sophisticated text
+scrapes could potentially yield spatial data from the play-by-play entries. More statistics should be
+generated that are consistent with traditional baseball analysis. While machine learning can solve some
+baseball analytics problems, most are more designed to be solved statistically. It is unclear whether
+a conventional SQL database is the correct choice. Given the challenging and lengthy data cleaning,
+a NoSQL database may be better. Data is generally viewed by either the team or the player, which
+could make NoSQL a good choice. Finally, this data could be wonderfully presented in some analytics
+dashboards. Now that this data is stored and there appears to be some reliable collection method
+increasing visibility is a huge goal. Some of the schools in the east, such as the University of Toronto,
+University of Waterloo and Universit´e de. Montr´eal are famous for its computer science, statistics
+and data science programs. It seems likely that at least one or two baseball players are interested
+in the preliminary work this paper sets out. Leveraging talent across the country, building a better
+relationship, and open-sourcing parts of this project could increase the growth speed exponentially
+and do significant good in growing the game in Canada.
+
 ## Get Involved
+
+
