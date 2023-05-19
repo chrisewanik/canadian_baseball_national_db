@@ -18,6 +18,7 @@ Beautiful Soup was used to scrape the data. Six different functions were created
 The best way to store the data was ambiguous. One of the most famous baseball datasets is the Lahman dataset. Created by Sean Lahman, it details all major league baseball players and team
 performance. The Lahman dataset is a common training set for regression problems in statistics and machine learning communities. We ultimately elected to model our database with this in mind.
 Ultimately the ccbc db has 6 tables: player batting, player pitching, team, team batting, team pitching and standings. Primary keys are often composite composed of the team or player name, the year, and the season type (i.e. PBA, 2017, Regular Season). We did mutate unique IDs for teams in the team table.
+
 ![lahman UML](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/bf250376-8ba6-4808-814a-cac28c5e91a6)
 
 
@@ -33,15 +34,18 @@ wOBA = (0.69×(BB/AB))+(0.89×(1B/AB))+(1.27×(2B/AB))+(1.62×(3B/AB))+(2.10×(H
 ## EDA
 
 Before modelling, some basic exploratory data analysis was done. Pitching and hitting statistics are generally very similar. Therefore, multicollinearity was a foreseen issue. A correlation heat map was developed to assess how strong this issue may be. The heatmap shows blocks of statistics that are correlated. Essentially most hitting statistics are related, and most pitching statistics are related. This will cause issues in modelling, particularly with methods like the Lasso that struggle with datasets suffering from multicollinearity. 
+
 ![Correlation Heatmap](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/0da1323c-c9b9-4b46-9eba-c79dacc518c4)
 
 Considering these results, the dataset appeared a strong candidate for dimensionality reduction. To accomplish this, a Principal Component Analysis (PCA) was executed. PCA reduces the number of dimensions to a smaller number, often used in machine learning pipelines for high dimensionality or colinear predictor variables. Ultimately seven principal components were chosen. Seven dimensions allowed us to explain over 95% of the variance in the dataset.
+
 ![PCA](https://github.com/chrisewanik/canadian_baseball_national_db/assets/113730877/f4ef9509-00cc-42fe-8316-a838553651ed)
 
-
-
 ## Models and Datasets
+As mentioned, the modelling goal of this work was to predict team winning percentages. This problem was approached in multiple ways. First, five different regression algorithms were chosen that could potentially model the problem: Kernel Ridge Regression (KRR), Lasso Regression, Gradient Boosting Regressor (GBR), Random Forest Regressor (RF) and Simple Linear Regression. Next, three different datasets were chosen. The first dataset only contained one feature, the team’s run differential, and one target, the winning percentage. Next, a dataset with 27 features (all of our scraped and engineered statistics) was prepared. The dataset was scaled with the StandardScaler, and the target remained the winning percentage. Finally, the last dataset used principal component analysis to reduce the 27 scaled features into seven unique dimensions. Each model is tested on each dataset, besides the simple linear regression, which only uses the run differential, and is inspired by the work in Analyzing Baseball Data with R
 
 ## Results
+
+Considering that our target variable is the winning percentage, we use Root Mean Squared Error (RMSE) and R-Squared (R2) to evaluate the performance of our models. RMSE can be viewed as the average difference from the actual winning percentage, while R2 represents the amount of the variance explained. So observing the first row for the Kernel Ridge Regression on the Run Differential dataset, our model is off by an average of 0.067 of winning percentage while explaining 85% of the variance. Overall the models achieved a maximum test R2 of 0.85 and a minimum RMSE of 0.067. The best machine learning algorithm is the Kernel Ridge Regression which has two models tied for the best performance. The only model that performed poorly was the KRR on the reduced dimensions dataset. The simple linear regression, as depicted in 4, performed well, tying the leaders for R2 but slightly lagging behind on RMSE.
 
 ## Get Involved
