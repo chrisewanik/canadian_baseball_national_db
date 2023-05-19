@@ -1,7 +1,7 @@
 # canadian_baseball_national_db
 
 ## TL;DR
-1. Canadian College Baseball has no one stop shop to view performance
+1. Project represents the first ever steps towards a National Canadian Database
 2. Use BeautifulSoup To Scrape Data
 3. Decompose Data and insert into a PostgreSQL database similar to the Lahman Set
 4. Kernel Ridge Regression was able to acheive an RMSE of 0.067 and a R^2 of 0.85 on two different datasets while simple linear regression achieved an R^2 of 0.85 with an RMSE of 0.070
