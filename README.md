@@ -56,30 +56,7 @@ Considering that our target variable is the winning percentage, we use Root Mean
 
 ## Conclusion and Future Work
 
-Overall this project turned out incredibly well. Web scraping was proved feasible and executed quickly. A solid foundation was designed for the PostgreSQL database, and after some tricky data decomposition, many tables could be placed in normalized form. Next, the study accurately models winning percentage and proves that the relationship between run differential and wins is relatively similar to Major League Baseball. The high R2 values received during the modelling phase indicate that despite the lower level of
-competition and smaller game schedule, certain relationships that exist in Major League Baseball
-appear to exist in Canadian College Baseball. The substantial value of run differential also suggests
-that this could be a reliable metric for seeding teams in a Canadian University World Series. These
-findings also build upon the questions posed in [2] using RPI for a ranking system. The criteria used
-in their paper would exclude the Prarie Baseball Academy from Canadian Collegiate World Series.
-However, by run differential, the 2016 and 2017 teams rank 4th and 1st in the CCBC pointsreak
-era. This suggests that using other metrics (like Pythagorean expected winning percentage) could
-be reliable measures for measuring excellence when interconference play is not feasible. It would be
-interesting to rank teams on other means, like true outcomes (HR, BB, Strikeouts). Homeruns, in
-particular, are probably a great measure of offensive ability, as they should be somewhat independent
-of competition (although that is not proven).
-There is much work to be done in the future. First, the data scrape function could be cleaned up
-by adding an argument allowing users to specify the HTML element they want on a page. This would
-allow for quicker web scraping and would generalize better to other tables. Scarpes should be extended
-to pull any other conference’s data that is made publicly available. There is still a lot of baseball data,
-rosters are available on websites, and other playing statistics remain available. Sophisticated text
-scrapes could potentially yield spatial data from the play-by-play entries. More statistics should be
-generated that are consistent with traditional baseball analysis. While machine learning can solve some
-baseball analytics problems, most are more designed to be solved statistically. It is unclear whether
-a conventional SQL database is the correct choice. Given the challenging and lengthy data cleaning,
-a NoSQL database may be better. Data is generally viewed by either the team or the player, which
-could make NoSQL a good choice. Finally, this data could be wonderfully presented in some analytics
-dashboards. Now that this data is stored and there appears to be some reliable collection method
+Overall this project turned out incredibly well. Web scraping was proved feasible and executed quickly. A solid foundation was designed for the PostgreSQL database, and after some tricky data decomposition, many tables could be placed in normalized form. Next, the study accurately models winning percentage and proves that the relationship between run differential and wins is relatively similar to Major League Baseball. The high R^2 values received during the modelling phase indicate that despite the lower level of competition and smaller game schedule, certain relationships that exist in Major League Baseball appear to exist in Canadian College Baseball. The substantial value of run differential also suggests that this could be a reliable metric for seeding teams in a Canadian University World Series. These findings also build upon the questions posed in [2] using RPI for a ranking system. The criteria used in their paper would exclude the Prarie Baseball Academy from Canadian Collegiate World Series. However, by run differential, the 2016 and 2017 teams rank 4th and 1st in the CCBC pointsreak era. This suggests that using other metrics (like Pythagorean expected winning percentage) could be reliable measures for measuring excellence when interconference play is not feasible. It would be interesting to rank teams on other means, like true outcomes (HR, BB, Strikeouts). Homeruns, in particular, are probably a great measure of offensive ability, as they should be somewhat independent of competition (although that is not proven). There is much work to be done in the future. First, the data scrape function could be cleaned up by adding an argument allowing users to specify the HTML element they want on a page. This would allow for quicker web scraping and would generalize better to other tables. Scarpes should be extended to pull any other conference’s data that is made publicly available. There is still a lot of baseball data, rosters are available on websites, and other playing statistics remain available. Sophisticated text scrapes could potentially yield spatial data from the play-by-play entries. More statistics should be generated that are consistent with traditional baseball analysis. While machine learning can solve some baseball analytics problems, most are more designed to be solved statistically. It is unclear whether a conventional SQL database is the correct choice. Given the challenging and lengthy data cleaning, a NoSQL database may be better. Data is generally viewed by either the team or the player, which could make NoSQL a good choice. Finally, this data could be wonderfully presented in some analytics dashboards. Now that this data is stored and there appears to be some reliable collection method
 increasing visibility is a huge goal. Some of the schools in the east, such as the University of Toronto,
 University of Waterloo and Universit´e de. Montr´eal are famous for its computer science, statistics
 and data science programs. It seems likely that at least one or two baseball players are interested
@@ -88,5 +65,7 @@ relationship, and open-sourcing parts of this project could increase the growth 
 and do significant good in growing the game in Canada.
 
 ## Get Involved
+
+If you have interest in contributing to this project (even if you have very little experience!) please reach out! The main goal of this project is to develop a system that grows the game in Canada. In the odd chance you are a coach or administrator (with no desire to program), still please contact us! We desperately need more contacts in eastern Canada and would love to grow this project to become the one stop shop for baseball statistics in Canada. 
 
 
