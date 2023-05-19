@@ -66,6 +66,7 @@ and do significant good in growing the game in Canada.
 
 ## Get Involved
 
-If you have interest in contributing to this project (even if you have very little experience!) please reach out! The main goal of this project is to develop a system that grows the game in Canada. In the odd chance you are a coach or administrator (with no desire to program), still please contact us! We desperately need more contacts in eastern Canada and would love to grow this project to become the one stop shop for baseball statistics in Canada. 
+If you have an interest in contributing to this project (even if you have very little to no experience!), please reach out! The main goal of this project is to develop a system that grows the game in Canada. On the odd chance you are a coach or administrator (with no desire to program), still please contact us! We desperately need more contacts in eastern Canada and would love to grow this project to become the one-stop shop for baseball statistics in Canada. 
 
+Contact Email: chris_ewanik@outlook.com
 
